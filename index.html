@@ -1,235 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="utf-8" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
 		/>
-		<title>Survey Forum</title>
+		<title>Product Page</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				min-width: 100vw;
+				box-sizing: border-box;
+				position: relative;
+				overflow-x: hidden;
+			}
+			header {
+				width: 100%;
+				position: fixed;
+				top: 0;
+				min-height: 50px;
+				display: flex;
+				padding: 0 10px;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #eee;
+				z-index: 10;
+			}
+
+			header img {
+				width: 30px;
+			}
+
+			header nav {
+				display: grid;
+			}
+
+			header nav ul {
+				width: 15vw;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+			}
+
+			header nav ul li {
+				list-style: none;
+			}
+
+			main {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: stretch;
+				margin-top: 60px;
+				scroll-margin-top: 60px;
+			}
+
+			main #videoContainer {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				padding: 20px;
+			}
+
+			section {
+				height: 200px;
+				margin-top: 50px;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+
+			section form {
+				display: block;
+			}
+
+			section form input[type="email"] {
+				max-width: 275px;
+				width: 100%;
+				padding: 5px;
+			}
+
+			section form input[type="submit"] {
+				max-width: 150px;
+				width: 100%;
+				height: 30px;
+				margin: 15px 0;
+				border: 0;
+				background-color: #f1c40f;
+			}
+
+			#products {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				padding: 20px;
+				height: 500px;
+				align-items: center;
+			}
+
+			#pricing {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
+				text-align: center;
+				height: 200px;
+			}
+
+			#pricing h2 {
+				background-color: #ccc;
+				padding: 10px;
+			}
+
+			#about {
+				text-align: center;
+				padding: 20px;
+			}
+
+			@media screen and (max-width: 600px) {
+				#products {
+					display: block;
+				}
+
+				#pricing {
+					display: block;
+				}
+			}
+		</style>
 	</head>
 	<body>
-		<header>
-			<h1 id="title">Corona Survey Forum</h1>
-			<p id="description" class="description text-center">
-				Thank you for taking the time to help us.
-			</p>
+		<header id="header">
+			<div id="img">
+				<img
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/505px-Apple_logo_black.svg.png"
+					alt="Company Logo"
+					id="header-img"
+				/>
+			</div>
+			<nav id="nav-bar">
+				<ul>
+					<li><a href="#products" class="nav-link">Products</a></li>
+					<li><a href="#pricing" class="nav-link">Pricing</a></li>
+					<li><a href="#about" class="nav-link">About</a></li>
+				</ul>
+			</nav>
 		</header>
-		<form id="survey-form">
-			<div class="form-group">
-				<label id="name-label" for="name">Name</label>
-				<input
-					type="text"
-					name="name"
-					id="name"
-					class="form-control"
-					placeholder="Enter your name"
-					required=""
-				/>
+		<main>
+			<div id="videoContainer">
+				<iframe
+					width="420"
+					height="315"
+					id="video"
+					src="https://www.youtube.com/embed/tgbNymZ7vqY"
+				></iframe>
 			</div>
-			<div class="form-group">
-				<label id="email-label" for="email">Email</label>
-				<input
-					type="email"
-					name="email"
-					id="email"
-					class="form-control"
-					placeholder="Enter your Email"
-					required=""
-				/>
+			<section id="form-container">
+				<form id="form" action="https://www.freecodecamp.com/email-submit">
+					<h2>For Further Product updates, Please subscribe to</h2>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="Enter valid email"
+					/>
+					<input id="submit" type="submit" value="Get Started" class="btn" />
+				</form>
+			</section>
+			<div id="products">
+				<div id="macContainer">
+					<img
+						id="mac"
+						src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mac-icon-shop-202104?wid=296&hei=280&fmt=png-alpha&.v=1617300104000"
+					/>
+				</div>
+				<div id="iphoneContainer">
+					<img
+						id="iphone"
+						src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-icon-shop-202012?wid=296&hei=280&fmt=png-alpha&.v=1607463223000"
+					/>
+				</div>
+				<div id="ipadContainer">
+					<img
+						id="ipad"
+						src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-icon-shop-202104?wid=296&hei=280&fmt=png-alpha&.v=1617403720000"
+					/>
+				</div>
 			</div>
-			<div class="form-group">
-				<label id="number-label" for="number">
-					Age
-					<span class="clue">(optional)</span>
-				</label>
-				<input
-					type="number"
-					name="age"
-					id="number"
-					min="10"
-					max="99"
-					class="form-control"
-					placeholder="Age"
-				/>
+			<div id="pricing">
+				<div id="macPrice">
+					<h2 id="priceHead">Mac book</h2>
+					<p>$4000</p>
+					<p>This is Mac Book on special day</p>
+				</div>
+				<div id="iphonePrice">
+					<h2 id="priceHead">Iphone</h2>
+					<p>$400</p>
+					<p>This is Iphone on special day</p>
+				</div>
+				<div id="ipadPrice">
+					<h2 id="priceHead">Ipad</h2>
+					<p>$200</p>
+					<p>This is Ipad on special day</p>
+				</div>
 			</div>
-			<div class="form-group">
-				<p>Which option best describes your current role?</p>
-				<select id="dropdown" name="role" class="form-control" required="">
-					<option disabled="" selected="" value="">Select current role</option>
-					<option value="student">Student</option>
-					<option value="job">Full Time Job</option>
-					<option value="learner">Full Time Learner</option>
-					<option value="preferNo">Prefer not to say</option>
-					<option value="other">Other</option>
-				</select>
+			<div id="about">
+				<h2>This is a web page</h2>
 			</div>
-
-			<div class="form-group">
-				<p>Would you recommend freeCodeCamp to a friend?</p>
-				<label>
-					<input
-						name="user-recommend"
-						value="definitely"
-						type="radio"
-						class="input-radio"
-						checked=""
-					/>
-					Definitely
-				</label>
-				<label>
-					<input
-						name="user-recommend"
-						value="maybe"
-						type="radio"
-						class="input-radio"
-					/>
-					Maybe
-				</label>
-
-				<label>
-					<input
-						name="user-recommend"
-						value="not-sure"
-						type="radio"
-						class="input-radio"
-					/>
-					Not sure
-				</label>
-			</div>
-
-			<div class="form-group">
-				<p>What is your favorite feature of freeCodeCamp?</p>
-				<select id="most-like" name="mostLike" class="form-control" required="">
-					<option disabled="" selected="" value="">Select an option</option>
-					<option value="challenges">Challenges</option>
-					<option value="projects">Projects</option>
-					<option value="community">Community</option>
-					<option value="openSource">Open Source</option>
-				</select>
-			</div>
-
-			<div class="form-group">
-				<p>
-					What would you like to see improved?
-					<span class="clue">(Check all that apply)</span>
-				</p>
-
-				<label>
-					<input
-						name="prefer"
-						value="front-end-projects"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Front-end Projects
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="back-end-projects"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Back-end Projects
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="data-visualization"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Data Visualization
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="challenges"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Challenges
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="open-source-community"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Open Source Community
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="gitter-help-rooms"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Gitter help rooms
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="videos"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Videos
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="city-meetups"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					City Meetups
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="wiki"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Wiki
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="forum"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Forum
-				</label>
-				<label>
-					<input
-						name="prefer"
-						value="additional-courses"
-						type="checkbox"
-						class="input-checkbox"
-					/>
-					Additional Courses
-				</label>
-			</div>
-
-			<div class="form-group">
-				<p>Any comments or suggestions?</p>
-				<textarea
-					id="comments"
-					class="input-textarea"
-					name="comment"
-					placeholder="Enter your comment here..."
-				></textarea>
-			</div>
-
-			<div class="form-group">
-				<button type="submit" id="submit" class="submit-button">Submit</button>
-			</div>
-		</form>
+		</main>
 		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 	</body>
 </html>
